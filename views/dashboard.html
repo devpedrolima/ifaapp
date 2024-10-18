@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/dashboard.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div id="logo">
+        <img src="https://institutofernandoantonio.com/wp-content/uploads/2023/07/logo-2.0.png"
+          alt="Logo do Instituto Fernando Antonio" width="130" height="50" />
+      </div>
+      <ul class="navigation-menu">
+        <li>
+          <a href="#" id="home-link">Home</a>
+        </li>
+        <li>
+          <a href="#">Visitas</a>
+          <ul class="subnav">
+            <li><a href="#">Minhas Visitas</a></li>
+            <li>
+              <a href="#" id="register-visit-link">Cadastrar Visitas</a>
+            </li>
+            <li><a href="#">Relatórios</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Empresas</a>
+          <ul class="subnav">
+            <li>
+              <a href="#" id="register-company-link">Cadastrar Empresas</a>
+            </li>
+            <li><a href="#">Lista de Empresas</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Agenda</a>
+          <ul class="subnav">
+            <li><a href="#">Minha Agenda</a></li>
+            <li><a href="#">Agenda IFA</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Sponte</a></li>
+        <li><a href="#">Meu Perfil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div id="hamburger-menu" class="hamburger">
+      <span class="material-symbols-outlined">menu</span>
+    </div>
+    <br />
+    <h1>Bem-vindo, <span id="username">Usuário</span></h1>
+    <div class="btn-group">
+      <button class="btn-outline-dark btn-hover-color">
+        <span class="material-symbols-outlined">calendar_month</span> Minhas
+        Visitas
+      </button>
+    </div>
+  </section>
+
+  <section>
+    <ul class="shop-pets">
+      <li class="card-large card-dark" id="sup-bird">
+        <div class="card-image">
+          <img src="https://institutofernandoantonio.com/wp-content/uploads/2024/10/1.png" />
+        </div>
+        <ul>
+          Visita Empresas
+          <button class="btn-outline-dark">
+            Minhas Visitas<span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </ul>
+      </li>
+      <li class="card-large card-dark" id="sup-bird">
+        <div class="card-image">
+          <img src="https://institutofernandoantonio.com/wp-content/uploads/2024/10/2.png" />
+        </div>
+        <ul>
+          Minha Agenda
+          <button class="btn-outline-dark">
+            Minha Agenda<span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </ul>
+      </li>
+      <li class="card-large card-dark" id="sup-bird">
+        <div class="card-image">
+          <img src="https://institutofernandoantonio.com/wp-content/uploads/2024/10/3.png" />
+        </div>
+        <ul>
+          Reuniões
+          <button class="btn-outline-dark">
+            Minhas Reuniões<span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Todas as Empresas</h2>
+    <ul class="services">
+      <li class="card-large card-dark card-wide" id="serv-groom">
+        <div class="card-image">
+          <img
+            src="https://ouch-cdn2.icons8.com/T11rfGmMKgcStJyAFKNgtOfE79cadabx0DVMnvzA9Pk/rs:fit:368:313/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNDQx/LzFlYWU4MWY3LWQ1/ZjYtNDM2Ny1hZjM5/LWVmNTFmMGM5Njk4/MS5wbmc.png" />
+        </div>
+        <ul>
+          {Nome da Empresa}
+          <li><a href="#">Última visita</a><span>[dd/mm/yyyy]</span></li>
+          <li><a href="#">Quem foi</a><span>[nome mentor]</span></li>
+          <li><a href="#">Próxima visita</a><span>[dd/mm/yyyy]</span></li>
+          <button class="btn-filled-dark">
+            <span class="material-symbols-outlined"> calendar_month </span>Saber mais
+          </button>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="company" id="register-company-section" style="display: none">
+    <h2>Cadastrar Empresa</h2>
+    <form class="company-form">
+      <div class="form-group">
+        <label for="companyName">Nome da Empresa:</label>
+        <input type="text" id="companyName" name="companyName" required />
+      </div>
+      <div class="form-group">
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" id="cnpj" name="cnpj" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Telefone:</label>
+        <input type="text" id="phone" name="phone" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="location">Adicionar Localização:</label>
+        <input type="text" id="location" name="location" placeholder="Ex: Rua XYZ, 123, Cidade" required />
+      </div>
+      <div class="form-group">
+        <label for="uploadPhoto">Upload de Foto:</label>
+        <input type="file" id="uploadPhoto" name="uploadPhoto" accept="image/*" required />
+      </div>
+      <button type="submit">Cadastrar</button>
+    </form>
+  </section>
+
+  <section class="visit" id="register-visit-section" style="display: none">
+    <h2>Cadastrar Visita</h2>
+    <form class="visit-form">
+      <!-- Dropdown de empresas cadastradas -->
+      <div class="form-group">
+        <label for="visitCompany">Qual empresa?</label>
+        <select id="visitCompany" name="visitCompany" required>
+          <!-- As opções serão geradas dinamicamente via JavaScript com dados do banco -->
+        </select>
+      </div>
+
+      <!-- Campo para adicionar os participantes da empresa -->
+      <div class="form-group">
+        <label for="participants">Quais foram os participantes da empresa?</label>
+        <input type="text" id="participants" name="participants" required placeholder="Nomes dos participantes" />
+      </div>
+
+      <!-- Campo para selecionar vários usuários do IFA -->
+      <div class="form-group">
+        <label for="ifaParticipants">Quem do IFA participou?</label>
+        <select id="ifaParticipants" name="ifaParticipants[]" multiple required>
+          <!-- As opções serão geradas dinamicamente via JavaScript com dados da tabela 'usuarios' -->
+        </select>
+      </div>
+
+      <!-- Campo para tempo de duração -->
+      <div class="form-group">
+        <label for="duration">Tempo de duração</label>
+        <input type="time" id="duration" name="duration" required />
+      </div>
+
+      <!-- Campo para próxima visita -->
+      <div class="form-group">
+        <label for="nextVisit">Próxima visita</label>
+        <input type="date" id="nextVisit" name="nextVisit" required />
+      </div>
+
+      <!-- Campo para upload de PDF -->
+      <div class="form-group">
+        <label for="report">Upload de arquivo</label>
+        <input type="file" id="report" name="report" accept="application/pdf" required />
+      </div>
+
+      <button type="submit">Cadastrar visita</button>
+    </form>
+  </section>
+
+  <footer>
+    <ul>
+      <li><a href="#">Toys</a></li>
+    </ul>
+  </footer>
+
+  <script src="./script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Fazer uma requisição para obter o nome do usuário armazenado na sessão
+      fetch("/api/getUser")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Usuário não autenticado");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          document.getElementById("username").textContent =
+            data.username || "Usuário";
+        })
+        .catch((err) => {
+          console.error("Erro ao buscar nome do usuário:", err);
+          document.getElementById("username").textContent = "Usuário";
+        });
+
+      // Seções de cadastro
+      const registerCompanySection = document.getElementById(
+        "register-company-section"
+      );
+      const registerVisitSection = document.getElementById(
+        "register-visit-section"
+      );
+
+      // Todas as outras seções que devem ser escondidas
+      const sections = document.querySelectorAll("section");
+
+      // Função para esconder todas as seções
+      function hideSections() {
+        sections.forEach((section) => {
+          section.style.display = "none";
+        });
+      }
+
+      // Adiciona o evento de clique no link de cadastrar empresas
+      document
+        .getElementById("register-company-link")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Previne o comportamento padrão de navegação
+          hideSections(); // Esconde todas as seções
+          registerCompanySection.style.display = "block"; // Mostra a seção de cadastro de empresa
+        });
+
+      // Adiciona o evento de clique no link de cadastrar visitas
+      document
+        .getElementById("register-visit-link")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Previne o comportamento padrão de navegação
+          hideSections(); // Esconde todas as seções
+          registerVisitSection.style.display = "block"; // Mostra a seção de cadastro de visita
+        });
+
+      // Adiciona o evento de clique no link de Home
+      document
+        .getElementById("home-link")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Previne o comportamento padrão de navegação
+          hideSections(); // Esconde todas as seções
+          // Mostra as outras seções, exceto a seção de cadastro de empresa e cadastro de visita
+          sections.forEach((section) => {
+            if (
+              section !== registerCompanySection &&
+              section !== registerVisitSection
+            ) {
+              section.style.display = "block";
+            }
+          });
+        });
+
+      // Adiciona o evento de clique na logo
+      document
+        .getElementById("logo")
+        .addEventListener("click", function (event) {
+          hideSections(); // Esconde todas as seções
+          // Mostra as outras seções
+          sections.forEach((section) => {
+            if (
+              section !== registerCompanySection &&
+              section !== registerVisitSection
+            ) {
+              section.style.display = "block";
+            }
+          });
+        });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+    <div class="app">
+        <div class="bg"></div>
+
+        <form id="loginForm" method="POST" action="/login">
+            <header>
+                <img src="https://institutofernandoantonio.com/wp-content/uploads/2024/01/ifalion.svg" alt="Illustration">
+            </header>
+
+            <div class="inputs">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Senha" required>
+            </div>
+
+            <footer>
+                <button type="submit">Entrar</button>
+                <p>Não tem conta? <a href="register">Registre-se</a></p>
+            </footer>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="/register.css">
+</head>
+<body>
+    <div class="app">
+        <div class="bg"></div>
+        <form id="registration-form">
+            <header>
+                <img src="https://institutofernandoantonio.com/wp-content/uploads/2023/07/logo-2.0.png" alt="Illustration">
+            </header>
+
+            <div class="inputs">
+                <input type="text" id="name" placeholder="Nome" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Senha" required>
+            </div>
+
+            <footer>
+                <button type="submit">Cadastrar</button>
+                <p>Já tem uma conta? <a href="/">Login</a></p>
+            </footer>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/signup', {  // A URL deve corresponder ao endpoint no seu servidor
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: name,  // Ajustar conforme o campo correto no banco de dados
+                        email: email,
+                        password: password,
+                    }),
+                });
+
+                if (response.ok) {
+                    alert('Usuário cadastrado com sucesso!');
+                    // Redirecionar ou limpar o formulário, se necessário
+                    document.getElementById('registration-form').reset();
+                } else {
+                    const errorData = await response.json();
+                    alert(`Erro: ${errorData.message}`);
+                }
+            } catch (error) {
+                console.error('Erro ao cadastrar usuário:', error);
+                alert('Ocorreu um erro ao tentar cadastrar. Tente novamente mais tarde.');
+            }
+        });
+    </script>
+</body>
+</html>
